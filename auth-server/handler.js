@@ -1,4 +1,3 @@
-//const { GoogleAuth } = require("google-auth-library");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
@@ -84,13 +83,11 @@ module.exports.getCalendarEvents = (event) => {
     client_secret,
     redirect_uris[0]
   );
-  const access_token = decodeURIComponent(
-    `${event.pathParameters.access_token}`
-  );
+  const access_token = decodeURIComponent(`${event.pathParameters.access_token}`);
 
   oAuth2Client.setCredentials({ access_token });
 
-  return new Promise((resolve, reject) => {
+  return new Promise( (resolve, reject) => {
     calendar.events.list(
       {
       calendarId: calendar_id,
@@ -128,5 +125,5 @@ module.exports.getCalendarEvents = (event) => {
       body: JSON.stringify(err),
     };
   });
-}
+};
 
