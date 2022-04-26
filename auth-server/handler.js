@@ -93,7 +93,7 @@ module.exports.getCalendarEvents = (event) => {
       calendarId: calendar_id,
       auth: oAuth2Client,
       timeMin: new Date().toISOString(),
-      singleEvents:true,
+      singleEvents: true,
       orderBy: 'stateTime',
       },
       (error, response) => {

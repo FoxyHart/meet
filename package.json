@@ -51,6 +51,8 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^6.0.0",
+    "eslint-config-react-app": "^7.0.1",
     "gh-pages": "^3.2.3"
   }
 }
