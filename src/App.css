@@ -7,31 +7,35 @@
   padding: 2% 5%;
   background-image: url("https://cdn.pixabay.com/blog/preview/2015/11/01/13-41-55-935_640.png");
   font-family: 'EB Garamond', serif;
-  color: #A0C1B8;
+  font-size: 18px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #79d2f2;
   background-size: cover;
 }
 body {
   background-color: #719FB0;
 }
 .div {
-  border-color: black; 
   background-color: #719FB0 !important;
 }
 .event {
   border-color: #D49B54 !important;
   background-color: #719FB0 !important;
   text-align: center !important;
-  
-  
+}
+.about {
+  color: #11418a;
+  font-style: underline;
 }
 .title-text {
-  color: #351F39;
+  color: #6d247a;
 }
 .description-text {
-  color: #351F39;
+  color: #11418a;
 }
 .summary {
-  color: #351F39;
+  color: #11418a;
 }
 .App * {
   box-sizing: border-box;
@@ -105,7 +109,9 @@ input[type="number"] {
 .suggestions > li:hover {
   background-color: #bcdcdb;
 }
-
+.htmlLink {
+  color:#033311;
+}
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
@@ -114,8 +120,34 @@ input[type="number"] {
   border-radius: 4px;
   position: relative;
 }
+.hide-details-btn {
+  font-family: 'EB Garamond', serif;
+  background-image: linear-gradient(#726A95, #d0abcd);
+  font-size: 17px;
+  color: #02255a;
+  height: 40px;
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 15px;
+  border-color: #726A95;
+  border-style: none;
+}
+.show-details-btn {
+  font-family: 'EB Garamond', serif;
+  background-image: linear-gradient(#d0abcd, #726A95);
+  font-size: 17px;
+  color: #02255a;
+  height: 40px;
+  width: 150px;
+  border-radius: 50%;
+  margin-top: 15px;
+  border-color: #726A95;
+  border-style: none;
 
+}
 .details-btn {
+  font-family: 'EB Garamond', serif;
+  background-color: #726A95;
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -225,7 +257,7 @@ input[type="number"] {
   color: #fff;
   font-size: 14px;
   letter-spacing: 0.2px;
-  font-family: "Roboto";
+  font-family: 'EB Garamond', serif;
 }
 
 

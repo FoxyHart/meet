@@ -24,7 +24,7 @@ class Event extends Component {
           <span className="timeZone">({event.start.timeZone})</span>
         </p>
         <p className="location">
-          @{event.summary} | {event.location}
+         {event.location}
         </p>
 
         {!collapsed && (
@@ -33,6 +33,10 @@ class Event extends Component {
           >
             <br />
             <h3 className="about">About Event</h3>
+            
+            <p id="event-description" className="description">
+              {event.description}
+            </p>
             <a
               className="htmlLink"
               href={event.htmlLink}
@@ -42,9 +46,6 @@ class Event extends Component {
             >
               See details on Google calendar
             </a>
-            <p id="event-description" className="description">
-              {event.description}
-            </p>
           </div>
         )}
         <button
@@ -52,7 +53,7 @@ class Event extends Component {
           className={`${collapsed ? 'show' : 'hide'}-details-btn`}
           onClick={this.handleClick}
         >
-          {collapsed ? 'show Details' : 'Hide Details'}
+          {collapsed ? 'Show Details' : 'Hide Details'}
         </button>
         </div>
         );
