@@ -9,7 +9,7 @@ class NumberOfEvents extends Component {
         <input 
           className="number-of-events"
           type="number"
-          value={this.props.numberOfEvents}>
+          defaultValue={this.props.numberOfEvents}>
         </input>
       </div>
     );

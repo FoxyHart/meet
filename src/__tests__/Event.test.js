@@ -5,9 +5,9 @@ import { mockData } from "../mock-data";
 
 describe("<EventList /> component", () => {
   let EventWrapper;
-
+  let event = mockData[0];
   beforeAll(() => {
-    EventWrapper = shallow(<Event event={mockData[1]} />);
+    EventWrapper = shallow(<Event event={event}  />);
   });
 
   test("render an event", () => {
@@ -21,42 +21,36 @@ describe("<EventList /> component", () => {
   test("render the summary", () => {
     expect(EventWrapper.find(".summary")).toHaveLength(1);
   });
+  
+  test('render event time zone', () => {
+    expect(EventWrapper.find('.timeZone')).toHaveLength(1);
+  });
 
   //button area
-
-  test("render the show details button", () => {
-    expect(EventWrapper.find(".show-details")).toHaveLength(1);
+  test('renders the show/hide details button', () => {
+    expect(EventWrapper.find('.show-details-btn')).toHaveLength(1);
   });
 
-  test("open details when the button is clicked", () => {
+ test('the event element is collapsed by default', () => {
     EventWrapper.setState({
       collapsed: true,
     });
-    EventWrapper.find(".show-details").simulate("click");
-    expect(EventWrapper.state("collapsed")).toBe(false);
+    expect(EventWrapper.state('collapsed')).toBe(true);
   });
 
-  test("hide details when the button is clicked", () => {
-    EventWrapper.setState({
-      collapsed: false,
-    });
-    EventWrapper.find(".hide-details").simulate("click");
-    expect(EventWrapper.state("collapsed")).toBe(true);
-  });
-
-  test("When the details button is clicked, the state will change from true to false", () => {
+  test('click on a show-details button to expand the event details', () => {
     EventWrapper.setState({
       collapsed: true,
     });
-    EventWrapper.find(".details-button").simulate("click");
-    expect(EventWrapper.state("collapsed")).toBe(false);
+    EventWrapper.find('.show-details-btn').simulate('click');
+    expect(EventWrapper.state('collapsed')).toBe(false);
   });
 
-  test("After the details button is clicked, the state will change from false to true", () => {
+  test('click on hide-details button to hide the evet details', () => {
     EventWrapper.setState({
       collapsed: false,
     });
-    EventWrapper.find(".details-button").simulate("click");
-    expect(EventWrapper.state("collapsed")).toBe(true);
+    EventWrapper.find('.hide-details-btn').simulate('click');
+    expect(EventWrapper.state('collapsed')).toBe(true);
   });
 });
